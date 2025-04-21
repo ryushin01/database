@@ -1,0 +1,42 @@
+{
+  "images": [
+    {
+      "src": "/presentation/images/pension/bg.jpeg",
+      "alt": "메인 이미지"
+    },
+    {
+      "src": "/presentation/images/pension/01.jpeg",
+      "alt": "1번 이미지"
+    },
+    {
+      "src": "/presentation/images/pension/02.jpeg",
+      "alt": "2번 이미지"
+    },
+    {
+      "src": "/presentation/images/pension/03.jpeg",
+      "alt": "3번 이미지"
+    },
+    {
+      "src": "/presentation/images/pension/04.jpeg",
+      "alt": "4번 이미지"
+    },
+    {
+      "src": "/presentation/images/pension/05.jpeg",
+      "alt": "5번 이미지"
+    },
+    {
+      "src": "/presentation/images/pension/06.jpeg",
+      "alt": "6번 이미지"
+    },
+    {
+      "src": "/presentation/images/pension/07.jpeg",
+      "alt": "7번 이미지"
+    }
+  ],
+  "data": {
+    "title": "한옥 펜션 해솔",
+    "path": "https://naver.me/xUw1pvaE",
+    "location": "경기 안산시 단원구 까치섬길 50-39",
+    "price": "1박 2일, 48만원 ~ 85만원 (10인 기준)"
+  }
+}
