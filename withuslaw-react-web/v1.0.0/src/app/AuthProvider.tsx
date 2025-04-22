@@ -42,7 +42,7 @@ function AuthProvider({ children }: { children: ReactNode }) {
       fetch(
         // `${process.env.NEXT_PUBLIC_AUTH_API_URL}/api/auth/login?membNo=${membNo}&pwd=282011&fcmId=ZdadV1234GYH%26%25%24%23%24Ssdfgsdfgsd%21%24%24444423444&dvceUnqNum=System&method=PIN`,
         // `${process.env.NEXT_PUBLIC_AUTH_API_URL}/api/auth/login?membNo=${membNo}&pwd=123456&fcmId=ZdadV1234GYH%26%25%24%23%24Ssdfgsdfgsd%21%24%24444423444&dvceUnqNum=System&method=PIN`,
-        `${process.env.NEXT_PUBLIC_AUTH_API_URL}/api/auth/login?membNo=${membNo}&pwd=123456&fcmId=ZdadV1234GYH%26%25%24%23%24Ssdfgsdfgsd%21%24%24444423444&dvceUnqNum=System&method=BIO`,
+        `${process.env.NEXT_PUBLIC_AUTH_API_URL}/api/auth/login?membNo=${membNo}&pwd=147852&fcmId=ZdadV1234GYH%26%25%24%23%24Ssdfgsdfgsd%21%24%24444423444&dvceUnqNum=System&method=BIO`,
         {
           method: "get",
           headers: {

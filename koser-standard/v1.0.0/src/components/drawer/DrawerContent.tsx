@@ -4,6 +4,7 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { LogoutIcon } from "@icons14";
+import { DefaultProfile } from "@common";
 import { CHANGE_PASSWORD_INPUT } from "@constants/input";
 import { MEMB_GB_CD } from "@constants/auth";
 import { ImageWithAuth, Typography } from "@components/common";
@@ -62,6 +63,7 @@ export default function DrawerContent({
   const openToast = useSetAtom(toastState);
   const { isDesktop } = useResponsive();
   const authInfo = useAtomValue(authAtom);
+  const [isLogout, setIsLogout] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
   const [pwdError, setPwdError] = useState(false);
   const [newPwdError, setNewPwdError] = useState(false);
@@ -96,12 +98,15 @@ export default function DrawerContent({
           return config;
         });
 
-        // 4. 1초 후 로그인 페이지 이동
+        // 4. 로그아웃 상태 변경
+        setIsLogout(true);
+
+        // 5. 1초 후 로그인 페이지 이동
         setTimeout(() => {
           router.push("/");
         }, 1000);
       } else {
-        // 5. 로그아웃실패시 토스트 팝업 노출
+        // 6. 로그아웃실패시 토스트 팝업 노출
         // 모바일은 하단에 pc는 상단에 토스트팝업 노출
         openToast({
           message: "로그아웃에 실패하였습니다.\n다시 시도해 주세요.",
@@ -244,12 +249,21 @@ export default function DrawerContent({
       {/* NOTE: 금융기관(신협) 케이스에서만 노출 */}
       {level === MEMB_GB_CD.FINANCIAL && (
         <div className="_drawer-content-inner-wrapper">
-          <ImageWithAuth
-            src={`${appURI}/api${imgSrc}`}
-            alt={`${profileData} 로고` || "로고 이미지"}
-            width={48}
-            height={48}
-          />
+          {isLogout ?
+            <Image
+              src={DefaultProfile}
+              alt="기본 프로필 이미지"
+              width={48}
+              height={48}
+            />
+            :
+            <ImageWithAuth
+              src={`${appURI}/api${imgSrc}`}
+              alt={`${profileData} 로고` || "로고 이미지"}
+              width={48}
+              height={48}
+            />
+          }
           <Typography kind="body-large" isBold={true}>
             {!!profileData ? profileData : "금융기관"}
           </Typography>
